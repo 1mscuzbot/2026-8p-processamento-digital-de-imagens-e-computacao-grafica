@@ -9,3 +9,9 @@ node_modules/
 *.log
 .vscode/
 .idea/
+bin/
+obj/
+*.depend
+*.layout
+*.exe
+*.dll

@@ -50,8 +50,23 @@
 - Visão humana: retina, cones e bastonetes, daltonismo, contraste simultâneo, ilusões de ótica
 - Sistema de visão (passos: aquisição → pré-processamento → processamento → análise → extração de características → IA/reconhecimento de padrões)
 
+### Prática 1 — Introdução ao OpenGL
+- Bibliotecas: OpenGL (`gl.h`), GLU (`glu.h`), GLUT (`glut.h`)
+- OpenGL como máquina de estados (cor corrente, glEnable/glDisable)
+- Convenção de comandos: prefixo + raiz + contador de args + tipo (ex: `glColor3f`)
+- Funções de inicialização GLUT: `glutInit`, `glutCreateWindow`, `glutMainLoop`
+- Callbacks: display, reshape, idle, timer, keyboard, mouse
+- Projeto base carrega imagem BMP e exibe via `ImageClass`
+- **Exercícios:**
+  1. Modificar a cor de fundo da janela para verde
+  2. Navegar pelas imagens .bmp com setas (← →)
+  3. Controlar o limiar do `ConvertBlackAndWhite` pelo teclado (±5) e mostrar o valor na tela
+
 ## Arquivos no repositório
 | Arquivo | Descrição |
 |---------|-----------|
 | `material/2026s-PDICG-Apresentacao.pdf` | Apresentação da disciplina (objetivos, ementa, avaliações, bibliografia) |
 | `material/slides/PDI26-01-IntroducaoPDI.pdf` | Aula 1 — Introdução a CG/PDI e visão humana |
+| `material/exercicios/PDI-Prática01-IntroducaoOpenGL.pdf` | Prática 1 — Introdução ao OpenGL (GLUT, callbacks, exercícios) |
+| `material/exercicios/Imagens/` | Imagens de exemplo (`.bmp`/`.jpg`) para os exercícios |
+| `material/exercicios/PDI-Aula-Aluno/` | Projeto C++ (CodeBlocks + OpenGL/GLUT) da prática |
