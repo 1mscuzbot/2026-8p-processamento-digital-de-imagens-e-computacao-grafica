@@ -45,13 +45,15 @@ fa(x,y) = i(x,y) · r(x,y)
 0 < r(x,y) < 1   (refletância do material)
 ```
 
-| Iluminação (candela) | i(x,y) | Material | r(x,y) |
+| Iluminação (**lux**) | i(x,y) | Material | r(x,y) (adimensional) |
 |----------------------|--------|----------|--------|
 | Dia de sol | 9.000 | Neve | 0,93 |
 | Dia nublado | < 1.000 | Lâmina de prata | 0,90 |
 | Escritório | 100 | Parede branca | 0,80 |
 | Noite de lua cheia | 0,01 | Aço inoxidável | 0,65 |
 | | | Veludo negro | 0,01 |
+
+> **Correção do slide:** a unidade de `i(x,y)` é **lux (lx)** — iluminância = fluxo luminoso por área — e não *candela* (que é a unidade de **intensidade luminosa**, outro conceito). Já `r(x,y)` é **adimensional** (razão entre 0 e 1), e não candela. Os valores numéricos (sol ~9.000 lx, lua cheia ~0,01 lx, neve ~0,93 de refletância) são os do livro de Gonzalez & Woods.
 
 ---
 
