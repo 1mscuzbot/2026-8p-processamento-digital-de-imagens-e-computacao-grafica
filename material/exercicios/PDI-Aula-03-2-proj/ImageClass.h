@@ -1,7 +1,11 @@
 // *****************************************************************************************
 //  ImageClassNEW2.h
 // *****************************************************************************************
+#ifdef _WIN32
 #include <GL\gl.h>
+#else
+#include <GL/gl.h>
+#endif
 #include <string>
 using namespace std;
 
@@ -13,7 +17,7 @@ class ImageClass
 protected:
 	int posX, posY;
 	float zoomH, zoomV;
-	unsigned char *data;
+	unsigned char *data = NULL;
 	unsigned int sizeX, sizeY;
 
 public:

@@ -9,6 +9,7 @@
 
 #include <cstdio>
 #include <cstdlib>
+#include <cstdint>
 #include "BmpLib2.h"
 
 #define BMP_TYPE 19778      //0x4D42
@@ -19,26 +20,26 @@
 
 typedef struct
 {
-    unsigned short int fileid;
-    unsigned long filesize;
-    unsigned short int reserved1;
-    unsigned short int reserved2;
-    unsigned long imgoffset;
+    uint16_t fileid;
+    uint32_t filesize;
+    uint16_t reserved1;
+    uint16_t reserved2;
+    uint32_t imgoffset;
 } bmpinfoheader ;
 
 typedef struct
 {
-    unsigned long headersize;
-    long imgwidth;
-    long imgheight;
-    unsigned short int numplanes;
-    unsigned short int pixeldepth;
-    unsigned long compression;
-    unsigned long bitmapsize;
-    long hresolution;
-    long vresolution;
-    unsigned long usedcolors;
-    unsigned long significantcolors;
+    uint32_t headersize;
+    int32_t imgwidth;
+    int32_t imgheight;
+    uint16_t numplanes;
+    uint16_t pixeldepth;
+    uint32_t compression;
+    uint32_t bitmapsize;
+    int32_t hresolution;
+    int32_t vresolution;
+    uint32_t usedcolors;
+    uint32_t significantcolors;
 } imginfoheader;
 
 typedef struct

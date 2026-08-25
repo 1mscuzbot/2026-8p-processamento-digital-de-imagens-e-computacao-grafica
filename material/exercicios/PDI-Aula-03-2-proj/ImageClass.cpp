@@ -1,7 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
+#ifdef _WIN32
 #include <GL\gl.h>
+#else
+#include <GL/gl.h>
+#endif
 
 #include "ImageClass.h"
 #include "BmpLib2.h"
@@ -32,7 +37,7 @@ ImageClass::ImageClass()
 	zoomH = zoomV = 1;
 
     // NOVO
-    // Isto resolve o problema de ter a imagem com largura múltipla de 4
+    // Isto resolve o problema de ter a imagem com largura mï¿½ltipla de 4
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 }
 // **********************************************************************
@@ -41,13 +46,14 @@ ImageClass::ImageClass()
 // **********************************************************************
 ImageClass::ImageClass(int sizeX, int sizeY)
 {
+    data = NULL;
     Realloc(sizeX,sizeY);
 
     posX = posY = 0;
 	zoomH = zoomV = 1;
 
     // NOVO
-    // Isto resolve o problema de ter a imagem com largura múltipla de 4
+    // Isto resolve o problema de ter a imagem com largura mï¿½ltipla de 4
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 }
 // **********************************************************************
@@ -85,7 +91,7 @@ bool ImageClass::Load(string nome)
     if (ext == "bmp")
     {
         if (data)
-            free(data); // é necessário desalocar a área da imagem
+            free(data); // ï¿½ necessï¿½rio desalocar a ï¿½rea da imagem
 
         if (BMP::load(nome.c_str(), sizeX, sizeY))
         {
@@ -342,7 +348,7 @@ void ImageClass::LoadFrom(string diretorio, string nome)
     r = Load( diretorio+nome );
     if (!r)
     {
-        printf("Imagem %s não carregada. Verifique o nome do Arquivo ou seu conteudo.", nome.c_str());
+        printf("Imagem %s nï¿½o carregada. Verifique o nome do Arquivo ou seu conteudo.", nome.c_str());
         printf("\nPressione ENTRE para encerrar.");
         getchar();
         exit(1);

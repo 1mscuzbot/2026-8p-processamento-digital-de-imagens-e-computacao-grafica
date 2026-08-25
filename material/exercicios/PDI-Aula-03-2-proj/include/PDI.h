@@ -1,7 +1,11 @@
 #ifndef PDI_H
 #define PDI_H
 
+#ifdef _WIN32
 #include "..\ImageClass.h"
+#else
+#include "../ImageClass.h"
+#endif
 
 #include <iostream>
 #include <vector>

@@ -1,14 +1,14 @@
 // **********************************************************************
-// COMPUTAÇÃO GRÁFICA
+// COMPUTAï¿½ï¿½O GRï¿½FICA
 //
 // **********************************************************************
 //
 // ImageTest.cpp
 //
-// Programa de testes para manipulação de Imagens
+// Programa de testes para manipulaï¿½ï¿½o de Imagens
 //
 //		Este programa deve ser compilador junto com a classe "ImageClass",
-//		que está implementada no arquivo "ImageClass.cpp"
+//		que estï¿½ implementada no arquivo "ImageClass.cpp"
 //
 //		- para compilar no Visual C ou Visual Studio acrescente as seguintes
 //        bibliotecas:
@@ -18,7 +18,7 @@
 //        bibliotecas:
 //		      -lopengl32 -lglut32 -lglu32
 //
-//		- para alterar a imagem que é carregada pelo programa, olhe a
+//		- para alterar a imagem que ï¿½ carregada pelo programa, olhe a
 //		  rotina 'init' e altere a linha:
 //							r = Image->Load("    ");
 //
@@ -27,13 +27,18 @@
 
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 
+#ifdef _WIN32
 #include <windows.h>
-
 #include <GL\gl.h>
 #include "glut.h"
+#else
+#include <GL/gl.h>
+#include <GL/glut.h>
+#endif
 
-#include "pdi.h"
+#include "PDI.h"
 
 int LIMIAR = 100;
 
@@ -42,7 +47,7 @@ PDI pdi;
 void MenuFuncoes(int op);
 // **********************************************************************
 //  void init(void)
-//		Inicializa os parâmetros globais de OpenGL
+//		Inicializa os parï¿½metros globais de OpenGL
 //      Cria os objetos que representam as imagens
 //
 // **********************************************************************
@@ -72,8 +77,8 @@ void reshape( int w, int h )
 }
 // **********************************************************************
 //  void display( void )
-//      Esta rotina é chamada toda vez que a tela precisa ser
-//      redesenhada e toda vez qua a rotina 'glutPostRedisplay' é chamada
+//      Esta rotina ï¿½ chamada toda vez que a tela precisa ser
+//      redesenhada e toda vez qua a rotina 'glutPostRedisplay' ï¿½ chamada
 //
 // **********************************************************************
 void display( void )
@@ -99,15 +104,15 @@ void keyboard ( unsigned char key, int x, int y )
         break;
     case '1':
         pdi.CopiaImagem();
-        glutPostRedisplay(); // obrigatório para redesenhar a tela
+        glutPostRedisplay(); // obrigatï¿½rio para redesenhar a tela
         break;
     case '2':
         pdi.ConvertToGrayScale();
-        glutPostRedisplay(); // obrigatório para redesenhar a tela
+        glutPostRedisplay(); // obrigatï¿½rio para redesenhar a tela
         break;
     case '3':
         pdi.ConvertBlackAndWhite(128);
-        glutPostRedisplay(); // obrigatório para redesenhar a tela
+        glutPostRedisplay(); // obrigatï¿½rio para redesenhar a tela
         break;
     case '+':
         LIMIAR +=10;
@@ -157,7 +162,7 @@ void arrow_keys ( int a_keys, int x, int y )
 //
 //
 // **********************************************************************
-// Função callback chamada para gerenciar eventos do mouse
+// Funï¿½ï¿½o callback chamada para gerenciar eventos do mouse
 void CriaMenu();
 
 void GerenciaMouse(int button, int state, int x, int y)
@@ -174,7 +179,7 @@ void MenuPrincipal(int op)
 {
 }
 
-// Gerenciamento do menu com as opções das amostragem
+// Gerenciamento do menu com as opï¿½ï¿½es das amostragem
 
 void MenuFuncoes(int op)
 {
@@ -208,7 +213,7 @@ void CriaMenu()
     glutAddMenuEntry("Thumbnail",5);
 
     menu = glutCreateMenu(MenuPrincipal);
-    glutAddSubMenu("Quantização",submenu[0]);
+    glutAddSubMenu("Quantizaï¿½ï¿½o",submenu[0]);
     glutAddSubMenu("Amostragem",submenu[1]);
     glutAttachMenu(GLUT_RIGHT_BUTTON);
 }
@@ -225,7 +230,7 @@ int main ( int argc, char** argv )
     glutInitDisplayMode (GLUT_DOUBLE | GLUT_DEPTH | GLUT_RGB );
     glutInitWindowPosition (100,100);
 
-    // Define o tamanho da janela gráfica do programa
+    // Define o tamanho da janela grï¿½fica do programa
     glutInitWindowSize  (800, 400);
     glutCreateWindow    ( "Image Loader" );
 

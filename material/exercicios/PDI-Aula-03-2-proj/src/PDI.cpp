@@ -1,7 +1,10 @@
 #include "PDI.h"
 #include <dirent.h>
 
-string pasta = "../ImagensGL/"; // ao criar objeto
+static string& getPasta() {
+    static string pasta = "../ImagensGL/";
+    return pasta;
+}
 
 PDI::PDI()
 {
@@ -27,7 +30,7 @@ void PDI::ConvertToGrayScale()
     // luminancia = (0.3*r + 0.59*g + 0.11*b);
 
     //Imagem->ReadPixel(GLint x, GLint y, unsigned char &r, unsigned char &g, unsigned char &b)
-    // Obtém os valores R,G,B de um ponto X,Y da image
+    // Obtï¿½m os valores R,G,B de um ponto X,Y da image
 
     //Imagem->DrawPixel(GLint x, GLint y, unsigned char r, unsigned char g, unsigned char b)
 	// Exibe na coordenada X,Y um ponto com a cor R,G,B na imagem
@@ -138,19 +141,19 @@ void PDI::Init()
 	Imagem = new ImageClass();
 
 	// carrega arquivo
-	int r = Imagem->Load( pasta + arquivos[imgAtual] );
+	int r = Imagem->Load( getPasta() + arquivos[imgAtual] );
 
 	if (!r)
     {
-        printf("Imagem não encontrada. Verifique o nome do Arquivo.\n");
+        printf("Imagem nï¿½o encontrada. Verifique o nome do Arquivo.\n");
         printf("Pressione ENTRE para encerrar.");
         getchar();
 		exit(1);
     }
 	else printf ("Imagem carregada!\n");
 
-	// Instacia o objeto que irá exibir a nova imagem
-	// Caso precise alterar o tamanho da nova imagem, mude os parâmetros
+	// Instacia o objeto que irï¿½ exibir a nova imagem
+	// Caso precise alterar o tamanho da nova imagem, mude os parï¿½metros
 	// da construtura, na chamada abaixo
 	NovaImagem = new ImageClass(Imagem->getSizeX(), Imagem->getSizeY());
 
@@ -167,7 +170,7 @@ void PDI::Reload()
 {
     // Imagem 1
     Imagem->Delete();
-    Imagem->Load(pasta + arquivos[imgAtual]);
+    Imagem->Load(getPasta() + arquivos[imgAtual]);
     Imagem->setPos(10,25);
 
     // Imagem 2
@@ -194,10 +197,14 @@ void PDI::carregaNomesImagens()
     DIR *dir;
     struct dirent *diread;
 
-    if ((dir = opendir(pasta.c_str())) != NULL) {
+    if ((dir = opendir(getPasta().c_str())) != NULL) {
         while ((diread = readdir(dir)) != NULL) {
-            arquivos.push_back(diread->d_name);
-            //printf("%-20s\n", diread->d_name);
+            string nome = diread->d_name;
+            if (nome == "." || nome == "..")
+                continue;
+            string ext = nome.substr(nome.find_last_of(".") + 1);
+            if (ext == "bmp" || ext == "BMP")
+                arquivos.push_back(nome);
         }
         closedir (dir);
     } else {
@@ -206,7 +213,6 @@ void PDI::carregaNomesImagens()
     }
 
     printf("\n\n");
-    arquivos.erase(arquivos.begin(),arquivos.begin()+2);
     for (auto file : arquivos)
         cout << file << "\n";
     cout << endl;
