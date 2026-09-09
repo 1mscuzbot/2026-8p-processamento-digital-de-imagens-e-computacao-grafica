@@ -46,6 +46,10 @@
 - [Aula 02.1 — Imagens: conceitos, representação e armazenamento (exercícios resolvidos)](notas/estudo-aula02-1-imagens-conceitos-e-representacao.md)
 - [Aula 02.2 — Amostragem e quantização na prática (texto/menus GLUT e algoritmos)](notas/estudo-aula02-2-amostragem-e-quantizacao-na-pratica.md)
 - [Aula 03 — Vizinhança, conectividade e rotulação (com prática de Flood Fill)](notas/estudo-aula03-vizinhanca-conectividade-e-rotulacao.md)
+- [Aula 04 — Medidas de distância e esqueletonização](notas/estudo-aula04-distancia.md)
+- [Aula 05 — Histogramas (normalização, contraste, equalização)](notas/estudo-aula05-histogramas.md)
+- [Aula 06 — Operações em imagens (pontuais, aritméticas, lógicas)](notas/estudo-aula06-operacoes-em-imagens.md)
+- [Aula 07 — Filtragem espacial (convolução, suavização, bordas)](notas/estudo-aula07-filtragem-espacial.md)
 
 ## Conteúdo das aulas
 
@@ -94,6 +98,10 @@
 | `material/slides/PDI26-02-2-AmostragemQuantização.pdf` | Aula 2.2 — Texto/menus GLUT e algoritmos de quantização e amostragem |
 | `material/slides/PDI26-03-1-Conectividade.pdf` | Aula 3.1 — Vizinhança, adjacência (4/8/m), conectividade e rotulação |
 | `material/slides/PDI26-03-2-Conectividade-Pratica.pdf` | Aula 3.2 — Prática: Flood Fill, componente conexo e rotulagem |
+| `material/slides/PDI26-04-Distancia.pdf` | Aula 4 — Distâncias (Euclidiana, D4, D8, Minkowski), transformada e esqueleto |
+| `material/slides/PDI26-05-Histogramas.pdf` | Aula 5 — Histogramas, expansão de contraste e equalização |
+| `material/slides/PDI26-06-Operacoes Imagens.pdf` | Aula 6 — Operações pontuais, aritméticas e lógicas |
+| `material/slides/PDI26-07-Filtragem Espacial.pdf` | Aula 7 — Convolução, passa-baixa/alta, Roberts/Sobel/Prewitt/Canny |
 | `material/exercicios/PDI-Prática01-IntroducaoOpenGL.pdf` | Prática 1 — Introdução ao OpenGL (GLUT, callbacks, exercícios) |
 | `material/exercicios/Imagens/` | Imagens de exemplo (`.bmp`/`.jpg`) para os exercícios |
 | `material/exercicios/PDI-Aula-02-proj/` | Projeto C++ (CodeBlocks + OpenGL/GLUT) das aulas 2.x |
