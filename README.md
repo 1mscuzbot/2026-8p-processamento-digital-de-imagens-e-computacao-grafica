@@ -50,6 +50,7 @@
 - [Aula 05 — Histogramas (normalização, contraste, equalização)](notas/estudo-aula05-histogramas.md)
 - [Aula 06 — Operações em imagens (pontuais, aritméticas, lógicas)](notas/estudo-aula06-operacoes-em-imagens.md)
 - [Aula 07 — Filtragem espacial (convolução, suavização, bordas)](notas/estudo-aula07-filtragem-espacial.md)
+- [Aula 08 — Processamento morfológico (erosão, dilatação, abertura, fechamento)](notas/estudo-aula08-processamento-morfologico.md)
 
 ## Conteúdo das aulas
 
@@ -89,6 +90,15 @@
 - Prática: Flood Fill (preenchimento por inundação), `RotularComponentes`, `FloodFillRotulo`
 - **Exercícios:** rotulação com Sc={1}, adaptação 8-conexa, A4/A8/Am de matriz 7×7, conectividade de S1/S2, limiar de cores próximas
 
+### Aula 8 — Processamento morfológico
+- Morfologia matemática: forma/estrutura via teoria dos conjuntos (binário → tons de cinza)
+- **Elemento estruturante** B; translação, reflexão, complemento, diferença
+- **Erosão** (`A ⊖ B`): objeto encolhe (AND sob a máscara)
+- **Dilatação** (`A ⊕ B`): objeto cresce (OR / reflexão de B)
+- Dualidade: `(A ⊖ B)ᶜ = Aᶜ ⊕ B̂`
+- **Abertura** `(A ⊖ B) ⊕ B`: suaviza, quebra istmos, remove pontas finas
+- **Fechamento** `(A ⊕ B) ⊖ B`: funde quebras, fecha buracos e baías
+
 ## Arquivos no repositório
 | Arquivo | Descrição |
 |---------|-----------|
@@ -102,6 +112,7 @@
 | `material/slides/PDI26-05-Histogramas.pdf` | Aula 5 — Histogramas, expansão de contraste e equalização |
 | `material/slides/PDI26-06-Operacoes Imagens.pdf` | Aula 6 — Operações pontuais, aritméticas e lógicas |
 | `material/slides/PDI26-07-Filtragem Espacial.pdf` | Aula 7 — Convolução, passa-baixa/alta, Roberts/Sobel/Prewitt/Canny |
+| `material/slides/PDI26-08-Processamento Morfologico.pdf` | Aula 8 — Erosão, dilatação, abertura e fechamento |
 | `material/exercicios/PDI-Prática01-IntroducaoOpenGL.pdf` | Prática 1 — Introdução ao OpenGL (GLUT, callbacks, exercícios) |
 | `material/exercicios/Imagens/` | Imagens de exemplo (`.bmp`/`.jpg`) para os exercícios |
 | `material/exercicios/PDI-Aula-02-proj/` | Projeto C++ (CodeBlocks + OpenGL/GLUT) das aulas 2.x |
