@@ -53,6 +53,7 @@
 - [Aula 08 — Processamento morfológico (erosão, dilatação, abertura, fechamento)](notas/estudo-aula08-processamento-morfologico.md)
 - [Aula 09 — Operações geométricas (translação, escala, rotação, espelhamento, cisalhamento)](notas/estudo-aula09-operacoes-geometricas.md)
 - [Lista para Prova 1](material/PDI26-10-ListaParaProva1.pdf) — revisão B1 (conceitual + procedimental)
+- [Lista para Prova 1 — **resolvida**](notas/lista-prova1-resolvida.md)
 
 ## Conteúdo das aulas
 
