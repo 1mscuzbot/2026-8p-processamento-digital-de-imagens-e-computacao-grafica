@@ -51,6 +51,8 @@
 - [Aula 06 — Operações em imagens (pontuais, aritméticas, lógicas)](notas/estudo-aula06-operacoes-em-imagens.md)
 - [Aula 07 — Filtragem espacial (convolução, suavização, bordas)](notas/estudo-aula07-filtragem-espacial.md)
 - [Aula 08 — Processamento morfológico (erosão, dilatação, abertura, fechamento)](notas/estudo-aula08-processamento-morfologico.md)
+- [Aula 09 — Operações geométricas (translação, escala, rotação, espelhamento, cisalhamento)](notas/estudo-aula09-operacoes-geometricas.md)
+- [Lista para Prova 1](material/PDI26-10-ListaParaProva1.pdf) — revisão B1 (conceitual + procedimental)
 
 ## Conteúdo das aulas
 
@@ -99,6 +101,11 @@
 - **Abertura** `(A ⊖ B) ⊕ B`: suaviza, quebra istmos, remove pontas finas
 - **Fechamento** `(A ⊕ B) ⊖ B`: funde quebras, fecha buracos e baías
 
+### Aula 9 — Operações geométricas
+- Mudam a localidade da informação: `(x,y) → (x′,y′)` via matrizes 2D (coords. homogêneas)
+- **Translação**, **escala**, **espelhamento**, **rotação**, **cisalhamento/distorção**
+- **Exercícios:** implementar os cinco algoritmos em imagem
+
 ## Arquivos no repositório
 | Arquivo | Descrição |
 |---------|-----------|
@@ -113,6 +120,8 @@
 | `material/slides/PDI26-06-Operacoes Imagens.pdf` | Aula 6 — Operações pontuais, aritméticas e lógicas |
 | `material/slides/PDI26-07-Filtragem Espacial.pdf` | Aula 7 — Convolução, passa-baixa/alta, Roberts/Sobel/Prewitt/Canny |
 | `material/slides/PDI26-08-Processamento Morfologico.pdf` | Aula 8 — Erosão, dilatação, abertura e fechamento |
+| `material/slides/PDI26-09-Operacoes Geometricas.pdf` | Aula 9 — Translação, escala, rotação, espelhamento, cisalhamento |
+| `material/PDI26-10-ListaParaProva1.pdf` | Lista de exercícios para a Prova 1 (B1) |
 | `material/exercicios/PDI-Prática01-IntroducaoOpenGL.pdf` | Prática 1 — Introdução ao OpenGL (GLUT, callbacks, exercícios) |
 | `material/exercicios/Imagens/` | Imagens de exemplo (`.bmp`/`.jpg`) para os exercícios |
 | `material/exercicios/PDI-Aula-02-proj/` | Projeto C++ (CodeBlocks + OpenGL/GLUT) das aulas 2.x |
